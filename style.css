@@ -7,14 +7,15 @@
 }
 
 .row {
-    border: 1px solid red; 
+    border: none;
     display: flex;
     flex: 1;
 }
 
-.column {
+.gridsquare {
     border: 1px solid black;
     flex: 1;
+    
 
 
 }
