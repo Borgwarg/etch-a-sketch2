@@ -1,9 +1,17 @@
 .gridcontainer {
     border: 1px solid black;
+    width: 500px;
+    height: 500px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .row {
+    border: 1px solid red; 
+    flex: 1;
+}
+
+.column {
     border: 1px solid black;
+
 }
