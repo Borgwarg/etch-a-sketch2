@@ -6,6 +6,17 @@ function createGrid(size) {
         row.classList.add("row");
         gridcontainer.appendChild(row);
     }
+    let row = document.querySelector(".row")
+
+    for (let i = 0; i < size; i++) {
+        
+        let column = document.createElement("div");
+        column.classList.add("column");
+        row.appendChild(column);
+    }
 }
 
 createGrid(16);
+
+
+

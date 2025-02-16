@@ -8,10 +8,12 @@
 
 .row {
     border: 1px solid red; 
+    display: flex;
     flex: 1;
 }
 
 .column {
     border: 1px solid black;
+    flex: 1;
 
 }
