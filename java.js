@@ -8,14 +8,24 @@ function createGrid(size) {
 
         for (let i = 0; i < size; i++) {
         let gridsquare = document.createElement("div");
-        gridsquare.classList.add("gridsquare");
+        gridsquare.classList.add("gridsquare")
         row.appendChild(gridsquare);
+        gridsquare.id = "gridsquare";
         }
     }
 
 }
 
 createGrid(16);
+
+const gridsquares = document.querySelectorAll(".gridsquare");
+
+gridsquares.forEach(gridsquare => {
+    gridsquare.addEventListener("mouseenter", () => {
+        gridsquare.style.backgroundColor = "red"
+    });
+});
+
 
 
 
