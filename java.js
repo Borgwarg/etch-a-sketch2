@@ -19,13 +19,28 @@ function createGrid(size) {
 createGrid(16);
 
 const gridsquares = document.querySelectorAll(".gridsquare");
+let drawing = false;
 
 gridsquares.forEach(gridsquare => {
-    gridsquare.addEventListener("mouseenter", () => {
-        gridsquare.style.backgroundColor = "red"
+    gridsquare.addEventListener("mousedown", () => {
+        gridsquare.style.backgroundColor = "red";
+        drawing = true;
+        draw();
     });
+    gridsquare.addEventListener("mouseup", () => {
+        drawing = false;
+    })
 });
 
 
-
-
+function draw() { 
+    gridsquares.forEach(gridsquare => {
+        gridsquare.addEventListener("mouseenter", () => {
+            if (drawing === true) {
+                gridsquare.style.backgroundColor = "red"
+            } else {
+                gridsquare.style.nackgroundColor = "white"
+            }
+        })
+    })
+}
