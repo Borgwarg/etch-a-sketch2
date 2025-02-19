@@ -1,18 +1,44 @@
-.gridcontainer {
-    border: 1px solid black;
-    width: 500px;
+body {
+    background-color: rgb(150, 150, 150);
+    display: flex;
+    justify-content: center;
+
+}
+.gameboy {
+    background-color: blueviolet;
+    padding-top: 48px;
+    height: 900px;
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.screen {
     height: 500px;
+    width: 600px;
+    background-color: rgb(48, 48, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border-bottom-right-radius: 80px;
+}
+.gridcontainer {
+    border: 1px solid rgb(72, 72, 72);
+    background-color: rgb(13, 168, 11);
+    width: 350px;
+    height: 350px;
     display: flex;
     flex-direction: column;
 }
 
 .row {
-    border: none;
     display: flex;
     flex: 1;
 }
 
 .gridsquare {
-    border: 1px solid black;
+    border: 0.1px dashed rgb(91, 91, 91);
     flex: 1;
 }

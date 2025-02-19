@@ -23,7 +23,7 @@ function createMouseEvents() {
 
     gridsquares.forEach(gridsquare => {
         gridsquare.addEventListener("mousedown", () => {
-            gridsquare.style.backgroundColor = "red";
+            gridsquare.style.backgroundColor = "rgb(48, 48, 48)";
             drawing = true;
             draw();
         });
@@ -39,10 +39,8 @@ function draw() {
     gridsquares.forEach(gridsquare => {
         gridsquare.addEventListener("mouseenter", () => {
             if (drawing === true) {
-                gridsquare.style.backgroundColor = "red"
-            } else {
-                gridsquare.style.nackgroundColor = "white"
-            }
+                gridsquare.style.backgroundColor = "rgb(48, 48, 48)";
+            } 
         });
     });
 }
