@@ -71,3 +71,11 @@ function createGrid(size) {
 };
 
 createGrid(50);
+
+const clearButton = document.querySelector(".btnc")
+clearButton.addEventListener("click", () => {
+   let gridsquares = document.querySelectorAll(".gridsquare");
+   gridsquares.forEach(gridsquare => {
+    gridsquare.style.backgroundColor = "rgb(13, 168, 11)";
+   })
+});
