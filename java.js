@@ -1,54 +1,34 @@
-let gridcontainer = document.querySelector("#gridcontainer");
+const gridcontainer = document.querySelector("#gridcontainer");
 gridcontainer.addEventListener('dragstart', (e) => {
     e.preventDefault();
 });
 
+let drawing = false;
+
 function getSize() {
-    let size = -1;
-    while(size <= 0 || size > 100 || isNaN(size)) {
-        console.log(typeof size);
-        size = parseInt(prompt("Enter a number between 1 and 100"));   
-        console.log("User input:", size);
-    };
-    console.log(size)
+    let size;
+    do {
+        size = parseInt(prompt("Enter a number between 1 and 100"));
+    } while (isNaN(size) || size <= 0 || size > 100);
     return size;
 }
 
-
-
-let drawing = false;
-
 function createMouseEvents() {
-    const gridsquares = document.querySelectorAll(".gridsquare");
-
-    gridsquares.forEach(gridsquare => {
-        gridsquare.addEventListener("mousedown", () => {
-            gridsquare.style.backgroundColor = "rgb(48, 48, 48)";
+    gridcontainer.addEventListener("mousedown", (e) => {
+        if (e.target.classList.contains("gridsquare")) {
+            e.target.style.backgroundColor = "rgb(48, 48, 48)";
             drawing = true;
-            draw();
-        });
-        gridsquare.addEventListener("mouseup", () => {
-            drawing = false;
-        })
+        }
     });
-};
 
-function draw() { 
-    const gridsquares = document.querySelectorAll(".gridsquare");
+    gridcontainer.addEventListener("mouseup", () => drawing = false);
 
-    gridsquares.forEach(gridsquare => {
-        gridsquare.addEventListener("mouseenter", () => {
-            if (drawing === true) {
-                gridsquare.style.backgroundColor = "rgb(48, 48, 48)";
-            } 
-        });
+    gridcontainer.addEventListener("mouseenter", (e) =>  {
+        if (drawing && e.target.classList.contains("gridsquare")) {
+            e.target.style.backgroundColor = "rgb(48, 48, 48)";
+        }
     });
 }
-
-createGridButton = document.querySelector(".createGrid");
-createGridButton.addEventListener("click", () => {
-    createGrid(getSize());
-});
 
 function createGrid(size) {
     gridcontainer.innerHTML = "";
@@ -72,10 +52,14 @@ function createGrid(size) {
 
 createGrid(50);
 
+
+createGridButton = document.querySelector(".createGrid");
+createGridButton.addEventListener("click", () => {
+    createGrid(getSize());
+});
+
 const clearButton = document.querySelector(".btnc")
 clearButton.addEventListener("click", () => {
-   let gridsquares = document.querySelectorAll(".gridsquare");
-   gridsquares.forEach(gridsquare => {
-    gridsquare.style.backgroundColor = "rgb(13, 168, 11)";
-   })
+   const gridsquares = document.querySelectorAll(".gridsquare");
+   gridsquares.forEach(gridsquare => gridsquare.style.backgroundColor = "rgb(13, 168, 11)");
 });
