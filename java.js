@@ -2,11 +2,10 @@ let gridcontainer = document.querySelector("#gridcontainer");
 
 function getSize() {
     let size = -1;
-    while(size <= 0 || size > 100 || typeof size !== "number") {
+    while(size <= 0 || size > 100 || isNaN(size)) {
         console.log(typeof size);
-        size = parseInt(prompt("Enter a number between 1 and 100"));
-    
-        console.log("test");
+        size = parseInt(prompt("Enter a number between 1 and 100"));   
+        console.log("User input:", size);
     };
     console.log(size)
     return size;
