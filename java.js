@@ -1,15 +1,15 @@
 let gridcontainer = document.querySelector("#gridcontainer");
 
 function getSize() {
-    let size = prompt("Enter a number between 1 and 100 to create grid");
-    size = parseInt(size);
-    if (size <= 100 && size > 0) {
-        return size
-    }
-    else {
-        size = prompt ("Invalid number, please try again")
+    let size = -1;
+    while(size <= 0 || size > 100 || typeof size !== "number") {
+        console.log(typeof size);
+        size = parseInt(prompt("Enter a number between 1 and 100"));
     
-    }
+        console.log("test");
+    };
+    console.log(size)
+    return size;
 }
 
 
