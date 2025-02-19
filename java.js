@@ -1,4 +1,7 @@
 let gridcontainer = document.querySelector("#gridcontainer");
+gridcontainer.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+});
 
 function getSize() {
     let size = -1;
